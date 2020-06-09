@@ -133,6 +133,26 @@ class Header extends React.Component {
 export default Header;
 ```
 
+Le lang switcher, cette fois lui va utiliser setLanguage, getLanguage du context avec useContext
+
+```
+import React, { useContext } from 'react';
+import { LocalizeContext } from '../localize';
+
+const LangSwitcher = (props) => {
+  const { setLanguage, getLanguage } = useContext(LocalizeContext);
+  const currentLang = getLanguage() === "fr" ? "en" : "fr";
+
+  return <a href="#" onClick={() => setLanguage(currentLang)}>{currentLang}</a>;
+};
+
+export default LangSwitcher;
+```
+
+Maintenant on peut switcher fr/en
+on va rajouter les traductions sur les autres textes
+
+
 Qu'est ce que npx = package runner != package manager
 - vient avec npm 5.2+
 - tester des package sans les installer

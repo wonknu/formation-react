@@ -9,8 +9,8 @@ const Header = (props) => {
     <div className="header">
       <h1>{t('FORMATION_REACT')}</h1>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/article/123456789">Article</Link>
+        <Link to="/">{t('PAGE_HOME')}</Link>
+        <Link to="/article/123456789">{t('PAGE_ARTICLE')}</Link>
         <LangSwitcher />
       </nav>
     </div>
