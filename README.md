@@ -165,31 +165,11 @@ maintenant on peut visiter http://formation.fr:3000 et http://formation.en:3000
 Rajouter un fichier getLocale.js dans le dossier /src/utils et dans le LocalizeProvider initiliser la valeur du useState avec cette valeur
 
 Maintenant si on veut récupérer la valeur dans le path de l'url il faut dabord modifier la configuration des routes
+dans App.js
 
-Qu'est ce que npx = package runner != package manager
-- vient avec npm 5.2+
-- tester des package sans les installer
-- avoir la dernière version d'un package et pas besoin de l'update lors de chaque nouvelle utilisation
+<Route exact path="/:lang([a-z]{2}-[a-z]{2})" component={Home} />
+<Route path="/:lang([a-z]{2}-[a-z]{2})/article/:id" component={Article} />
 
-----------------------
+et ajouter cette partie d'url danssi elle n'existe pas dans le LocalizeProvider a l'aide d'un hook useEffect et d'un useRef, pour cela on a besoin de la variable history du router qui peut être récupéré graceavec withRouter qui est un HOC
 
-Open App.js point d'entrée
-
-
-- Introduction a la formation
-
-- Mise en place architecture du projet
-
-- React router dom 
-  - BrowserRouter
-  - Switch
-  - Route (utilisation des path et des paramètre d'url)
-  - Link
-  - withRouter, Higher Order Component (HOC) pour accèder à la propriété history
-  - error 404
-
-- i18n, gestion de la localisation from scratch sans package npm
-  - React context avec createContext, le Provider et les deux façon d'utiliser le Consumer (dans un component vs dans un functionnal component)
-  - Les hooks useState, useEffect, useContext
-  - Un utilitaire pour récupérer la locale depuit le nom de domaine et / ou le language codes ISO dans le path
-  - switcher de langue
+Une dernière chose a faire est d'ajouter dans getLocale la methode pour récupérer la locale depuis le path de l'url

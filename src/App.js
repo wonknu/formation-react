@@ -23,8 +23,8 @@ function App() {
           <Header />
           <div className="content">
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/article/:id" component={Article} />
+              <Route exact path="/:lang([a-z]{2}-[a-z]{2})" component={Home} />
+              <Route path="/:lang([a-z]{2}-[a-z]{2})/article/:id" component={Article} />
               <Route path="*" component={Error404} />
             </Switch>
           </div>
