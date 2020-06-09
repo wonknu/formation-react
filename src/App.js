@@ -13,20 +13,23 @@ import {
   Error404,
   Home
 } from './pages';
+import LocalizeProvider from './components/localize';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <div className="content">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/article/:id" component={Article} />
-            <Route path="*" component={Error404} />
-          </Switch>
+      <LocalizeProvider>
+        <div className="App">
+          <Header />
+          <div className="content">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/article/:id" component={Article} />
+              <Route path="*" component={Error404} />
+            </Switch>
+          </div>
         </div>
-      </div>
+      </LocalizeProvider>
     </BrowserRouter>
   );
 }
