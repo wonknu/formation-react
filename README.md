@@ -153,6 +153,19 @@ Maintenant on peut switcher fr/en
 on va rajouter les traductions sur les autres textes
 
 
+Récupérer la locale via l'url soit le domaine soit par le code langue ISO dans le path de l'url
+
+Dans nos hosts rajouter
+
+127.0.0.1 formation.en
+127.0.0.1 formation.fr
+
+maintenant on peut visiter http://formation.fr:3000 et http://formation.en:3000
+
+Rajouter un fichier getLocale.js dans le dossier /src/utils et dans le LocalizeProvider initiliser la valeur du useState avec cette valeur
+
+Maintenant si on veut récupérer la valeur dans le path de l'url il faut dabord modifier la configuration des routes
+
 Qu'est ce que npx = package runner != package manager
 - vient avec npm 5.2+
 - tester des package sans les installer

@@ -1,4 +1,5 @@
 import React from 'react';
+import { getLocale } from '../../utils/getLocale';
 
 import EN from "../../i18n/en.json";
 import FR from "../../i18n/fr.json";
@@ -15,7 +16,7 @@ export const LocalizeContext = React.createContext({
 });
 
 const LocalizeProvider = ({children}) => {
-  const [language, setLanguage] = React.useState("fr");
+  const [language, setLanguage] = React.useState(getLocale());
 
   const t = key => {
     return translations[language] && translations[language][key] ? translations[language][key] : key;
