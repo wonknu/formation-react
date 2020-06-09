@@ -1,2 +1,2 @@
-# formation-react
-formation react
+
+`npx create-react-app formation-react`
