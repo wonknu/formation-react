@@ -1,9 +1,10 @@
 import React from 'react';
+import { useParams } from "react-router";
 
-class Article extends React.Component {
-  render() {
-    return <div>Article</div>;
-  }
+const Article = (props) => {
+  let { id } = useParams();
+
+  return <div>Article id : {id}</div>;
 };
 
 export default Article;

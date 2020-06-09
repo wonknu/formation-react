@@ -1,11 +1,7 @@
 import React from 'react';
 
-class Error404 extends React.Component {
-  render() {
-    return (
-      <div>Error 404</div>
-    );
-  }
+const Error404 = (props) => {
+  return <div>Error404</div>;
 };
 
 export default Error404;
